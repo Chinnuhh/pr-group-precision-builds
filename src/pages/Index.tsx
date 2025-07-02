@@ -1,6 +1,5 @@
-
 import React from 'react'
-import { Phone, Mail, MapPin, ArrowRight, WhatsApp } from 'lucide-react'
+import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -245,7 +244,7 @@ const Index = () => {
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4"
             >
-              <WhatsApp className="mr-2 h-5 w-5" />
+              <ArrowRight className="mr-2 h-5 w-5" />
               Get Quote on WhatsApp
             </Button>
           </div>
