@@ -10,17 +10,31 @@ const Footer = () => {
     { name: 'Renovations', link: '/services/renovations' }
   ]
 
+  const constructionTypes = [
+    { name: 'Residential Buildings', link: '/construction/residential-buildings' },
+    { name: 'Commercial Structures', link: '/construction/commercial-structures' },
+    { name: 'Infrastructure Projects', link: '/construction/infrastructure-projects' }
+  ]
+
   const designIdeas = [
     { name: 'Modular Kitchen', link: '/design-ideas/modular-kitchen' },
+    { name: 'Kitchen Interiors', link: '/design-ideas/kitchen-interiors' },
     { name: 'Wardrobe Designs', link: '/design-ideas/wardrobe' },
     { name: 'Bathroom Designs', link: '/design-ideas/bathroom' },
-    { name: 'Living Room', link: '/design-ideas/living-room' }
+    { name: 'Living Room', link: '/design-ideas/living-room' },
+    { name: 'Bedroom Designs', link: '/design-ideas/bedroom-designs' }
+  ]
+
+  const renovationTypes = [
+    { name: 'Kitchen Renovation', link: '/renovations/kitchen' },
+    { name: 'Bathroom Renovation', link: '/renovations/bathroom' },
+    { name: 'Home Renovation', link: '/renovations/home' }
   ]
 
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
@@ -66,6 +80,19 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            <h4 className="text-lg font-semibold mt-6 mb-4">Construction</h4>
+            <ul className="space-y-2">
+              {constructionTypes.map((type) => (
+                <li key={type.name}>
+                  <Link 
+                    to={type.link} 
+                    className="text-slate-300 hover:text-blue-400 transition-colors text-sm"
+                  >
+                    {type.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Design Ideas */}
@@ -82,14 +109,23 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link 
-                  to="/design-ideas" 
-                  className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
-                >
-                  View All Ideas
-                </Link>
-              </li>
+            </ul>
+          </div>
+
+          {/* Renovations */}
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Renovations</h3>
+            <ul className="space-y-3">
+              {renovationTypes.map((type) => (
+                <li key={type.name}>
+                  <Link 
+                    to={type.link} 
+                    className="text-slate-300 hover:text-blue-400 transition-colors"
+                  >
+                    {type.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

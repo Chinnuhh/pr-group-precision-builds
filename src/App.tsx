@@ -14,6 +14,14 @@ import BathroomDesigns from "./pages/design-ideas/BathroomDesigns";
 import MasterBedroomDesigns from "./pages/design-ideas/MasterBedroomDesigns";
 import LivingRoomDesigns from "./pages/design-ideas/LivingRoomDesigns";
 import TVUnitDesigns from "./pages/design-ideas/TVUnitDesigns";
+import KitchenInteriors from "./pages/design-ideas/KitchenInteriors";
+import BedroomDesigns from "./pages/design-ideas/BedroomDesigns";
+import ResidentialBuildings from "./pages/construction/ResidentialBuildings";
+import CommercialStructures from "./pages/construction/CommercialStructures";
+import InfrastructureProjects from "./pages/construction/InfrastructureProjects";
+import KitchenRenovation from "./pages/renovations/KitchenRenovation";
+import BathroomRenovation from "./pages/renovations/BathroomRenovation";
+import HomeRenovation from "./pages/renovations/HomeRenovation";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 
@@ -33,6 +41,11 @@ const App = () => (
           <Route path="/services/interior-design" element={<InteriorDesign />} />
           <Route path="/services/renovations" element={<Renovations />} />
           
+          {/* Construction Category Routes */}
+          <Route path="/construction/residential-buildings" element={<ResidentialBuildings />} />
+          <Route path="/construction/commercial-structures" element={<CommercialStructures />} />
+          <Route path="/construction/infrastructure-projects" element={<InfrastructureProjects />} />
+          
           {/* Design Ideas Routes */}
           <Route path="/design-ideas/modular-kitchen" element={<ModularKitchen />} />
           <Route path="/design-ideas/wardrobe" element={<WardrobeDesigns />} />
@@ -40,6 +53,13 @@ const App = () => (
           <Route path="/design-ideas/master-bedroom" element={<MasterBedroomDesigns />} />
           <Route path="/design-ideas/living-room" element={<LivingRoomDesigns />} />
           <Route path="/design-ideas/tv-unit" element={<TVUnitDesigns />} />
+          <Route path="/design-ideas/kitchen-interiors" element={<KitchenInteriors />} />
+          <Route path="/design-ideas/bedroom-designs" element={<BedroomDesigns />} />
+          
+          {/* Renovation Routes */}
+          <Route path="/renovations/kitchen" element={<KitchenRenovation />} />
+          <Route path="/renovations/bathroom" element={<BathroomRenovation />} />
+          <Route path="/renovations/home" element={<HomeRenovation />} />
           
           {/* Other Pages */}
           <Route path="/portfolio" element={<Portfolio />} />

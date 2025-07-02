@@ -41,11 +41,25 @@ const Index = () => {
 
   const designIdeas = [
     { title: "Modular Kitchen Designs", link: "/design-ideas/modular-kitchen" },
+    { title: "Kitchen Interiors", link: "/design-ideas/kitchen-interiors" },
     { title: "Wardrobe Designs", link: "/design-ideas/wardrobe" },
     { title: "Bathroom Designs", link: "/design-ideas/bathroom" },
     { title: "Master Bedroom Designs", link: "/design-ideas/master-bedroom" },
+    { title: "Bedroom Designs", link: "/design-ideas/bedroom-designs" },
     { title: "Living Room Designs", link: "/design-ideas/living-room" },
     { title: "TV Unit Designs", link: "/design-ideas/tv-unit" }
+  ]
+
+  const constructionTypes = [
+    { title: "Residential Buildings", link: "/construction/residential-buildings" },
+    { title: "Commercial Structures", link: "/construction/commercial-structures" },
+    { title: "Infrastructure Projects", link: "/construction/infrastructure-projects" }
+  ]
+
+  const renovationTypes = [
+    { title: "Kitchen Renovation", link: "/renovations/kitchen" },
+    { title: "Bathroom Renovation", link: "/renovations/bathroom" },
+    { title: "Complete Home Renovation", link: "/renovations/home" }
   ]
 
   return (
@@ -53,7 +67,7 @@ const Index = () => {
       <Header />
       <StickyWidgets />
       
-      {/* Hero Section with Video Background */}
+      {/* Hero Section with Interior Animation Background */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
@@ -65,11 +79,11 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Background Image with Animation */}
+        {/* Interior Design Background Image with Animation */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 animate-pulse"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 animate-pulse"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)`
+            backgroundImage: `url(https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)`
           }}
         />
         
@@ -143,8 +157,35 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Design Ideas Section */}
+      {/* Construction Types Section */}
       <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Construction Projects</h2>
+            <p className="text-xl text-slate-600">
+              Specialized construction services for every need
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {constructionTypes.map((type, index) => (
+              <Link 
+                key={index} 
+                to={type.link}
+                className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100"
+              >
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{type.title}</h3>
+                <div className="flex items-center text-blue-600 font-medium">
+                  View Projects
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Design Ideas Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Design Ideas</h2>
@@ -152,12 +193,12 @@ const Index = () => {
               Explore our curated collection of design inspirations
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {designIdeas.map((idea, index) => (
               <Link 
                 key={index} 
                 to={idea.link}
-                className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100"
+                className="bg-slate-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100"
               >
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">{idea.title}</h3>
                 <div className="flex items-center text-blue-600 font-medium">
@@ -167,13 +208,32 @@ const Index = () => {
               </Link>
             ))}
           </div>
-          <div className="text-center mt-12">
-            <Link to="/design-ideas">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                View All Design Ideas
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+        </div>
+      </section>
+
+      {/* Renovation Services Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Renovation Services</h2>
+            <p className="text-xl text-slate-600">
+              Transform your existing spaces with our renovation expertise
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {renovationTypes.map((type, index) => (
+              <Link 
+                key={index} 
+                to={type.link}
+                className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100"
+              >
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{type.title}</h3>
+                <div className="flex items-center text-blue-600 font-medium">
+                  View Services
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
