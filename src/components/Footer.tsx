@@ -34,9 +34,9 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">PR</span>
@@ -46,21 +46,21 @@ const Footer = () => {
                 <p className="text-blue-400 font-medium">Precision Redefined</p>
               </div>
             </div>
-            <p className="text-slate-300 mb-6">
+            <p className="text-slate-300 mb-8 leading-relaxed">
               Expert construction and interior design services across Visakhapatnam, Srikakulam, and Vizianagaram.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <span>8886663807</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400" />
-                <span>prconstructioninteriors@gmail.com</span>
+                <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                <span className="text-slate-200">8886663807</span>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400 mt-1" />
-                <span>Visakhapatnam, Andhra Pradesh</span>
+                <Mail className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200 break-all">prconstructioninteriors@gmail.com</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 text-blue-400 flex-shrink-0 mt-1" />
+                <span className="text-slate-200">Visakhapatnam, Andhra Pradesh</span>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Services</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-8">
               {services.map((service) => (
                 <li key={service.name}>
                   <Link 
@@ -80,8 +80,8 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            <h4 className="text-lg font-semibold mt-6 mb-4">Construction</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-semibold mb-4">Construction</h4>
+            <ul className="space-y-3">
               {constructionTypes.map((type) => (
                 <li key={type.name}>
                   <Link 
@@ -112,10 +112,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Renovations */}
+          {/* Renovations & Quick Links */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Renovations</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-8">
               {renovationTypes.map((type) => (
                 <li key={type.name}>
                   <Link 
@@ -127,10 +127,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
+            
             <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
@@ -153,7 +150,7 @@ const Footer = () => {
         </div>
 
         {/* Google Map */}
-        <div className="mt-12 pt-8 border-t border-slate-700">
+        <div className="mt-16 pt-8 border-t border-slate-700">
           <h3 className="text-xl font-semibold mb-6 text-center">Find Us</h3>
           <div className="w-full h-64 rounded-lg overflow-hidden">
             <iframe
@@ -170,7 +167,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-700 text-center">
+        <div className="mt-16 pt-8 border-t border-slate-700 text-center">
           <p className="text-slate-400">
             © 2024 PR Group. All rights reserved. | Precision Redefined
           </p>
