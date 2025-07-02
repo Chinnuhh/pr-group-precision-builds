@@ -9,6 +9,11 @@ import Construction from "./pages/services/Construction";
 import InteriorDesign from "./pages/services/InteriorDesign";
 import Renovations from "./pages/services/Renovations";
 import ModularKitchen from "./pages/design-ideas/ModularKitchen";
+import WardrobeDesigns from "./pages/design-ideas/WardrobeDesigns";
+import BathroomDesigns from "./pages/design-ideas/BathroomDesigns";
+import MasterBedroomDesigns from "./pages/design-ideas/MasterBedroomDesigns";
+import LivingRoomDesigns from "./pages/design-ideas/LivingRoomDesigns";
+import TVUnitDesigns from "./pages/design-ideas/TVUnitDesigns";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 
@@ -30,6 +35,11 @@ const App = () => (
           
           {/* Design Ideas Routes */}
           <Route path="/design-ideas/modular-kitchen" element={<ModularKitchen />} />
+          <Route path="/design-ideas/wardrobe" element={<WardrobeDesigns />} />
+          <Route path="/design-ideas/bathroom" element={<BathroomDesigns />} />
+          <Route path="/design-ideas/master-bedroom" element={<MasterBedroomDesigns />} />
+          <Route path="/design-ideas/living-room" element={<LivingRoomDesigns />} />
+          <Route path="/design-ideas/tv-unit" element={<TVUnitDesigns />} />
           
           {/* Other Pages */}
           <Route path="/portfolio" element={<Portfolio />} />

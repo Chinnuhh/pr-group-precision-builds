@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -52,32 +53,44 @@ const Index = () => {
       <Header />
       <StickyWidgets />
       
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+      {/* Hero Section with Video Background */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse"></div>
+            <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/10 rounded-full mix-blend-multiply filter blur-xl animate-bounce animation-delay-2000"></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-xl animate-bounce animation-delay-4000"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-pink-500/10 rounded-full mix-blend-multiply filter blur-xl animate-bounce"></div>
+          </div>
+        </div>
+        
+        {/* Background Image with Animation */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 animate-pulse"
           style={{
             backgroundImage: `url(https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)`
           }}
         />
+        
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-white to-gold-400 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-gold-400 bg-clip-text text-transparent animate-fade-in">
             PR GROUP
           </h1>
-          <p className="text-2xl md:text-4xl font-light mb-4 text-blue-100 animate-fade-in">
+          <p className="text-2xl md:text-4xl font-light mb-4 text-blue-200 animate-fade-in shadow-text">
             Precision Redefined
           </p>
-          <p className="text-xl md:text-2xl mb-12 text-slate-200 max-w-3xl mx-auto animate-fade-in">
+          <p className="text-xl md:text-2xl mb-12 text-white max-w-3xl mx-auto animate-fade-in shadow-text font-medium">
             Build Smart. Live Beautiful. Choose PR Group.
           </p>
-          <p className="text-lg mb-8 text-slate-300 animate-fade-in">
+          <p className="text-lg mb-8 text-blue-100 animate-fade-in shadow-text">
             Your dream space is one click away.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
             <Button 
               onClick={handleCallNow}
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-xl"
             >
               <Phone className="mr-2 h-5 w-5" />
               Call Now
@@ -85,8 +98,7 @@ const Index = () => {
             <Button 
               onClick={handleGetQuote}
               size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-xl border-2 border-gold-400"
             >
               <ArrowRight className="mr-2 h-5 w-5" />
               Get a Quote
@@ -241,8 +253,7 @@ const Index = () => {
             <Button 
               onClick={handleGetQuote}
               size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4"
+              className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-4 border-2 border-gold-400"
             >
               <ArrowRight className="mr-2 h-5 w-5" />
               Get Quote on WhatsApp
